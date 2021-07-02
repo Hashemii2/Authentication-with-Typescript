@@ -16,7 +16,7 @@ router.post(
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.status(400).send(errors.array());
+      throw new Error("ایمیل یا پسورد موجود نیست. دوباره تلاش کنید.");
     }
 
     const { email, password } = req.body;
